@@ -1,0 +1,92 @@
+@import '../../styles/mixins.scss';
+
+.weather-history {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+
+    &__list {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scrollbar-width:auto;
+    width: 50%;
+
+    @include on-tablet {
+        gap: 15px;
+    }
+
+    @include on-tablet {
+        gap: 10px;
+    }
+    }
+
+    &__item {
+    padding: 5px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.75);
+    width: 120px;
+    height: 117px;
+    border-radius: 25px;
+    position:relative;
+    cursor: pointer;
+
+    @include on-tablet {
+        font-size: 14px;
+    }
+
+    @include on-mobile {
+        width: 50%;
+        height: 90px;
+        font-size: 12px;
+    }
+
+    &:hover {
+        background-color: rgba(225, 225, 225, 0.817);
+    }
+
+    &:active {
+        background-color: rgba(155, 155, 155, 0.817);
+    }
+
+    &-temp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+
+    &-icon {
+    width: 40px;
+    height: 40px;
+
+    @include on-tablet {
+      width: 30px;
+      height: 30px;
+    }
+
+    @include on-mobile {
+      width: 20px;
+      height: 20px;
+    }
+    }
+
+    &-delete {
+    position: absolute;
+    bottom: 95px;
+    right: 0px;
+    color: #fff;
+
+    @include on-mobile {
+        bottom: 70px;
+    }
+
+    &:hover {
+        color:rgba(155, 155, 155, 0.817);
+    }
+  }
+}
+}

@@ -1,0 +1,39 @@
+/* Сброс */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins";
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+.weather-app {
+  height: 100vh;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.layout {
+  min-height: 100vh;
+  max-height: 100%;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: #fff;
+  margin-top: 100px;
+}

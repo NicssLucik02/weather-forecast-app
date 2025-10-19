@@ -1,0 +1,107 @@
+@import '../../styles/mixins.scss';
+
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+
+    &__icon {
+        width: 80px;
+        height: 80px;
+
+        @include on-tablet {
+        width: 60px;
+        height: 60px;
+        }
+
+        @include on-mobile {
+        width: 40px;
+        height: 40px;
+        }
+
+        
+    }
+
+    &__description {
+        color: var(--font-color--white);
+        font-size: 30px;
+
+        @include on-tablet {
+          font-size: 20px;
+        }
+
+        @include on-mobile {
+          font-size: 16px
+        }
+    }
+
+    &__country {
+        color: var(--font-color--white);
+        font-size: 48px;
+        font-weight: 500;
+
+
+        @include on-tablet {
+          font-size: 38px;
+        }
+
+        @include on-mobile {
+          font-size: 20px
+        }
+    }
+
+    &__city {
+    color: var(--font-color--white);
+    font-size: 56px;
+    font-weight: 500;
+
+        @include on-tablet {
+          font-size: 42px;
+        }
+
+        @include on-mobile {
+          font-size: 24px
+        }
+    }
+
+    &__temp {
+    display: flex;
+    align-items: center;
+    gap: 5px    ;
+    color: var(--font-color--white);
+    font-size: 56px;
+    font-weight: 400;
+    position: relative;
+    
+        @include on-tablet {
+          font-size: 42px;
+        }
+
+        @include on-mobile {
+          font-size: 24px
+        }
+    }
+}
+
+.info__button-temp {
+    background: linear-gradient(to bottom, rgba(49, 120, 253, 0.2), rgba(132, 172, 245, 0.3));
+    color: var(--font-color--white);
+    width: 50px;
+    height: 27px;
+    border: none;
+    border-radius: 100px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    position: absolute;
+    transform: translateX(220px) translateY(5px);
+
+    @include on-tablet {
+      transform: translateX(170px) translateY(5px);
+    }
+
+    @include on-mobile {
+      transform: translateX(110px) translateY(5px);
+    }
+}

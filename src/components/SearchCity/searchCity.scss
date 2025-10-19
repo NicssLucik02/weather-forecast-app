@@ -1,0 +1,121 @@
+@import '../../styles/mixins.scss';
+
+.header {
+    width: 100%;
+    display: flex;
+        justify-content: center;
+        gap: 38px;
+        padding-top: 40px;
+
+        @include on-tablet {
+            gap: 20px;
+        }
+
+        &__form {
+            width: 45%;
+
+            @include on-mobile {
+            width: 60%;
+        }
+        }
+
+        
+}
+
+.search__input-container {
+    display: flex;
+    height: 56px;
+    border-radius: 100px;
+    color: #fff;
+    overflow: hidden;
+    
+    @include on-tablet {
+        height: 40px;
+    }
+}
+
+.search__input {
+    border: none;
+    width: 80%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(153, 153, 153, 0.5));
+    border-radius: 100px 0 0 100px;
+    padding-left: 20px;
+    
+    @include on-tablet {
+        font-size: 14px;
+    }
+
+    @include on-mobile {
+        font-size: 10px;
+    }
+    
+    &:focus {
+        outline-color:black;
+    }
+}
+
+.search__button {
+    background: linear-gradient(to right, rgba(58, 58, 58, 0.6), rgba(160, 160, 160, 0.4));
+    color: rgba(38, 38, 38, 1);
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    transition: background-color 0.2s ease;
+
+    @include on-tablet {
+        font-size: 14px;
+    }
+
+    @include on-mobile {
+        font-size: 10px;
+    }
+
+    &:hover {
+       background-color: rgba(58, 58, 58, 0.6);
+    }
+}
+
+.search__city-coords {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    width: 8%;
+    height: 56px;
+    border:none;
+    border-radius: 100px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(0, 144, 255, 0.5));
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    
+    @include on-tablet {
+        height: 40px;
+        font-size: 16px;
+        width: 9%;
+    }
+
+    @include on-mobile {
+        font-size: 10px;
+        width: 20%;
+    }
+
+    &__icon {
+        @include on-tablet {
+            width: 14px;
+            height: 14px;
+        }
+
+        @include on-mobile {
+            width: 10px;
+            height: 10px;
+        }
+    }
+
+    &:hover {
+        background-color: rgba(0, 144, 255, 0.8);
+    }
+}
