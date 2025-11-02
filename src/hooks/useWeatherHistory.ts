@@ -7,7 +7,21 @@ export const useWeatherHistory = () => {
   useEffect(() => {
     const data = localStorage.getItem("weatherHistory");
     if (data) {
-      setWeatherHistory(JSON.parse(data));
+      try {
+        const parsed = JSON.parse(data);
+        const valid = (Array.isArray(parsed) ? parsed : []).filter(
+          (item): item is WeatherForecast =>
+            item &&
+            typeof item === "object" &&
+            item.location &&
+            typeof item.location.name === "string",
+        );
+        setWeatherHistory(valid);
+      } catch (e) {
+        console.error("Ошибка парсинга weatherHistory:", e);
+        localStorage.removeItem("weatherHistory");
+        setWeatherHistory([]);
+      }
     }
   }, []);
 
@@ -22,7 +36,7 @@ export const useWeatherHistory = () => {
   const addCity = (city: WeatherForecast) => {
     setWeatherHistory((prev) => {
       const withoutCity = prev.filter(
-        (item) => item.location.name !== city.location.name,
+        (item) => item.location?.name !== city.location.name,
       );
       const updated = [...withoutCity, city];
 

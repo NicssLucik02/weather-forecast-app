@@ -1,7 +1,7 @@
 import React from "react";
 import "./searchCity.scss";
 import { useWeatherContext } from "@/context/WeatherContext";
-
+import { MapPin } from "lucide-react";
 const SearchCityComponent: React.FC = () => {
   const weatherContext = useWeatherContext();
   return (
@@ -30,7 +30,7 @@ const SearchCityComponent: React.FC = () => {
           onClick={weatherContext.findCityByCoords}
         >
           Home
-          <img src="../src/assets/geo.svg" className="search__city-coords__icon"/>
+          <MapPin className="search__city-coords__icon" />
         </button>
       </header>
       {weatherContext.currentError && (

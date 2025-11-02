@@ -1,4 +1,4 @@
-@import '../../styles/mixins.scss';
+@use '../../styles/mixins.scss' as *;
 
 .header {
     width: 100%;
@@ -40,6 +40,7 @@
     background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(153, 153, 153, 0.5));
     border-radius: 100px 0 0 100px;
     padding-left: 20px;
+    font-size: 16px;
     
     @include on-tablet {
         font-size: 14px;
