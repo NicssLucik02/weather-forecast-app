@@ -5,16 +5,13 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react(), svgr()],
+  base: "/weather-forecast-app/",
   resolve: {
     alias: {
-      "@": path.resolve(new URL("./src", import.meta.url).pathname),
-      "@/components": path.resolve(
-        new URL("./src/components", import.meta.url).pathname,
-      ),
-      "@/context": path.resolve(
-        new URL("./src/context", import.meta.url).pathname,
-      ),
-      "@/types": path.resolve(new URL("./src/types", import.meta.url).pathname),
+      "@": path.resolve(__dirname, "./src"),
+      "@/components": path.resolve(__dirname, "./src/components"),
+      "@/context": path.resolve(__dirname, "./src/context"),
+      "@/types": path.resolve(__dirname, "./src/types"),
     },
   },
 });
